@@ -1,0 +1,58 @@
+$White: #FFFFFF;
+$SkyBlue: #38AEF0;
+$Black: #434A54;
+$Gray: #999999;
+$BlackGray: #333333;
+$LightGray: #EEEEEE;
+$Deepblue1: #2F3E51;
+$Deepblue2: #253141;
+$Orange: #FF6E00;
+
+
+.html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: $White;
+
+
+  header {
+    width: 100%;
+    padding-top: 0;
+    background-color: $SkyBlue;
+    color: white;
+
+    h1 {
+    margin-top: 0;
+    }
+
+    .logo {
+      width: 225px;
+      height: 56px;
+      margin: 0 auto;
+
+      a {
+        display: block;
+        color: $White;
+        width: 100px;
+        height: 100px;
+      }
+  .navbar-brand {
+     height: 50px;
+     width: 100px;
+  }
+
+      .user_nav {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    padding: 0;
+    background-color: $SkyBlue;
+    text-align: center;
+  }
+}
