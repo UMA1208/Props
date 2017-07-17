@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
- root 'picks#index'
- resources :picks
+  root 'picks#index'
+  resources :picks
 end
