@@ -1,0 +1,20 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_tag('/picks', method: :post) do %>
+      <div class="col-md-5 col-md-offset-3">
+      <h3>
+        投稿する
+      </h3>
+      </div>
+      <div class="col-md-5 col-md-offset-3">
+      <input placeholder="Page URL" type="text" name="url" autofocus="true">
+      </div>
+      <div class="col-md-5 col-md-offset-3">
+      <textarea placeholder="Comment" name="text" cols="30" rows="10"></textarea>
+      </div>
+      <div class="col-md-5 col-md-offset-3">
+      <input type="submit" value="SENT">
+      </div>
+    <% end %>
+  </div>
+</div>

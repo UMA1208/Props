@@ -48,3 +48,5 @@ end
 gem 'devise'
 gem 'kaminari'
 gem 'bootstrap-sass'
+gem 'mechanize'
+gem 'nokogiri'
