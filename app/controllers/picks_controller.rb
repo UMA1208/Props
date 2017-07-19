@@ -8,9 +8,9 @@ class PicksController < ApplicationController
   end
 
   def create
-    Pick.create(url: params[:url], comment: params[:comment], user_id: current_user.id)
     link = (params[:url])
-    get_product(link)
+    get_product(link).save
+
   end
 
   def get_product(link)
@@ -20,8 +20,7 @@ class PicksController < ApplicationController
     title = page.title
     image_url = page.at('.m-article-main img')[:src]
 
-    product = Product.new(title: title, image_url: image_url)
-    product.save
+    product = Product.new(title: title, image_url: image_url, user_id: current_user.id, url: params[:url])
   end
 
   def show
