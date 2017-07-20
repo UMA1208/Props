@@ -25,7 +25,6 @@ class PicksController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @pick = Pick.find(params[:id])
   end
 
 end
