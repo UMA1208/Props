@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :picks do
-    resources :products do
-      resources :comments, only: [:new, :create]
-    end
+  end
+  resources :products do
+    resources :comments, only: [:create]
   end
   root 'products#index'
 
