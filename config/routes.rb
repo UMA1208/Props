@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :picks do
-    resources :products, only: [:show, :index] do
+    resources :products do
       resources :comments, only: [:new, :create]
     end
   end
