@@ -4269,7 +4269,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-bottom {
   bottom: 0;
   margin-bottom: 0;
-  border-width: 1px 0 0;
+  border-width: 0 0 0;
 }
 .navbar-brand {
   float: left;
