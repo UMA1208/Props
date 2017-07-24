@@ -1123,7 +1123,6 @@ img {
 }
 .img-responsive,
 .thumbnail > img,
-.thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
@@ -5017,10 +5016,6 @@ a.badge:focus {
           transition: border .2s ease-in-out;
 }
 .thumbnail > img,
-.thumbnail a > img {
-  margin-right: auto;
-  margin-left: auto;
-}
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {

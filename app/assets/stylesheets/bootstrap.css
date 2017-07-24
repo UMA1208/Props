@@ -1123,13 +1123,18 @@ img {
 }
 .img-responsive,
 .thumbnail > img,
-.thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 160px;
 }
+
+.thumbnail a > img {
+  max-width: 100%;
+  max-height: 160px;
+}
+
 .img-rounded {
   border-radius: 6px;
 }
@@ -5016,8 +5021,7 @@ a.badge:focus {
        -o-transition: border .2s ease-in-out;
           transition: border .2s ease-in-out;
 }
-.thumbnail > img,
-.thumbnail a > img {
+.thumbnail > img {
   width: 528px;
   margin-right: auto;
   margin-left: auto;

@@ -4,7 +4,7 @@
         <img src="<%= product.image_url %>" alt="">
         </a>
         <div class="caption">
-            <a href="/picks/<%= product.id %>"><h3><%= product.title %></h3></a>
+            <a href="/picks/<%= product.id %>"><h3><%= truncate(product.title, :length => 40 ) %></h3></a>
             <div class="user-comment">
               <div class="profile">
                 <img src="https://pbs.twimg.com/profile_images/857938333145616384/4NSssIhj_400x400.jpg" alt="sky-hi">
