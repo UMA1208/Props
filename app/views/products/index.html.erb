@@ -41,6 +41,8 @@
             </div>
             </div>
             <!-- /.col-md-8 -->
+            <% if user_signed_in? %>
+            <% else %>
             <div class="col-md-4">
                 <h1>音楽に自由を</h1>
                 <p>
@@ -77,6 +79,7 @@
             </div>
         </div>
         <!-- /.row -->
+       <% end %>
 
         <!-- Page Features -->
         <div class="row text-center">
