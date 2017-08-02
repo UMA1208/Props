@@ -11,6 +11,12 @@
       <%= f.label :product, "Page URL" %>
       <%= f.text_field :url, class: "form-control" %>
       </div>
+
+<!--       <div class="col-md-5 col-md-offset-3">
+      <%= f.label :comments, "Comment" %>
+      <%= f.text_field :comments, class: "form-control" %>
+      </div> -->
+
       <div class="col-md-5 col-md-offset-3">
       <%= f.label :product, :tag_list %>
       <%= f.text_field :tag_list, value: @product.tag_list.join(','), class: "form-control" %>
