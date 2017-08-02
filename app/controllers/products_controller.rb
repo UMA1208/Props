@@ -39,5 +39,24 @@ class ProductsController < ApplicationController
     @products = Product.tagged_with("政治・経済")
   end
 
+  def love
+    @products = Product.tagged_with("愛")
+  end
+
+  def peace
+    @products = Product.tagged_with("平和")
+  end
+
+  def live
+    @products = Product.tagged_with("生きる")
+  end
+
+  def friend
+    @products = Product.tagged_with("友達")
+  end
+
+  def battle
+    @products = Product.tagged_with("勝負")
+  end
   private
 end
