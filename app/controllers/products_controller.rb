@@ -31,8 +31,8 @@ class ProductsController < ApplicationController
     @comments = @product.comments.includes(:user)
   end
 
-  def mcbattle
-    @products = Product.tagged_with("MCバトル")
+  def hiphop
+    @products = Product.tagged_with("HipHop")
   end
 
   def economics
