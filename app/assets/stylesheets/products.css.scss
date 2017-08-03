@@ -30,7 +30,8 @@ container .contents-area {
   width: 560px;
 }
 
-.thumbnail > img {
-  max-height: 400px;
-  width: auto;
+.img-responsive {
+  height: 416px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :products do
     collection do
-      get 'mcbattle'
+      get 'hiphop'
       get 'economics'
       get 'love'
       get 'peace'
