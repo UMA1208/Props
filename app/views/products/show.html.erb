@@ -2,15 +2,20 @@
   <div class="main-body">
     <div class="col-md-5 col-md-offset-3">
       <div class="thumbnail" >
-        <a href="<%= @product.url %>">
-          <div class="img-responsive" style="background-image: url(<%= @product.image_url %>);">
-          <div class="caption-full">
-              <h4><%= @product.title %></h4>
-          </div>
-          <div class="ratings">
-            <p class="pull-right">3 picks</p>
-          </div>
-        </a>
+
+        <% if @product.video_id? %>
+        <iframe width="740" height="416" src="https://www.youtube.com/embed/<%= @product.video_id %>" frameborder="0" allowfullscreen></iframe>
+     　　<% else %>
+          <a href="<%= @product.url %>">
+            <div class="img-responsive" style="background-image: url(<%= @product.image_url %>);">
+            <div class="caption-full">
+                <h4><%= @product.title %></h4>
+            </div>
+            <div class="ratings">
+              <p class="pull-right">3 picks</p>
+            </div>
+          </a>
+        <% end %>
       </div>
 
     <div class="well">
