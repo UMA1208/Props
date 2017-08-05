@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.includes(:user)
+    @q = Product.ransack(params[:q])
+    @articles = @q.result(distinct: true)
   end
 
   def user_params
