@@ -23,9 +23,17 @@ class ProductsController < ApplicationController
     agent = Mechanize.new
     page = agent.get(link)
     title = page.title
-    image_url = page.at('.m-article-main img')[:src]
+    video_id = page.at('meta[itemprop="videoId"]')[:content]
+    image_url = "http://i.ytimg.com/vi/#{video_id}/mqdefault.jpg"
 
-    product = Product.new(title: title, image_url: image_url, user_id: current_user.id, url: params[:url], url: params[:product].require(:url), tag_list: params[:product].require(:tag_list))
+    # if page.at('.m-article-main img')[:src]
+    #   image_url = page.at('.m-article-main img')[:src]
+    # elsif
+    # else
+    #   redirect_to root_path
+    # end
+
+    product = Product.new(title: title, image_url: image_url, user_id: current_user.id, url: params[:url], url: params[:product].require(:url), tag_list: params[:product].require(:tag_list), video_id: video_id)
   end
 
   def show

@@ -1,14 +1,12 @@
 /* 検索ボックス */
 dl.searchbox{
-
+  height: 25px;
 }
 dl.searchbox dt{
   padding:3px;
 }
 dl.searchbox dt input{
   width:100%;
-  height:30px;
-  line-height:30px;
   background:none;
   background-color: white;
   border:none;
@@ -20,18 +18,4 @@ dl.searchbox dd{
   width:30%;
   text-align: center;
   vertical-align: middle;
-}
-.search-btn{
-  display:block;
-  background:#5fad35;
-  width:100%;
-  height:36px;
-  line-height:36px;
-  border:none;
-  border-radius: 0 6px 6px 0;
-  color:#FFF;
-}
-
-.search-btn:hover {
-  background:#228B22;
 }
