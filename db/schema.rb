@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805203351) do
+ActiveRecord::Schema.define(version: 20170808100344) do
 
   create_table "comments", force: :cascade do |t|
     t.text    "comment",    limit: 65535
@@ -20,11 +20,12 @@ ActiveRecord::Schema.define(version: 20170805203351) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string  "title",     limit: 255
-    t.text    "image_url", limit: 65535
-    t.integer "user_id",   limit: 4
-    t.text    "url",       limit: 65535
-    t.text    "video_id",  limit: 65535
+    t.string  "title",        limit: 255
+    t.text    "image_url",    limit: 65535
+    t.integer "user_id",      limit: 4
+    t.text    "url",          limit: 65535
+    t.text    "video_id",     limit: 65535
+    t.text    "project_path", limit: 65535
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -82,6 +83,7 @@ ActiveRecord::Schema.define(version: 20170805203351) do
     t.text     "icon_image",             limit: 65535
     t.text     "header",                 limit: 65535
     t.text     "job",                    limit: 65535
+    t.integer  "uid",                    limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

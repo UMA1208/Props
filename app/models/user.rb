@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          
   has_many :comments
   has_many :products
@@ -26,5 +26,4 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
     following_relationships.find_by(following_id: other_user.id).destroy
   end
-
 end
