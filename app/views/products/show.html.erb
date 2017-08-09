@@ -4,7 +4,7 @@
       <div class="thumbnail" >
 
         <% if @product.video_id? %>
-        <iframe width="740" height="416" src="https://www.youtube.com/embed/<%= @product.video_id %>" frameborder="0" allowfullscreen></iframe>
+        <iframe class="col-md-12" height="100%" src="https://www.youtube.com/embed/<%= @product.video_id %>" frameborder="0" allowfullscreen></iframe>
      　　<% else %>
           <a href="<%= @product.url %>">
             <div class="img-responsive" style="background-image: url(<%= @product.image_url %>);">
@@ -32,10 +32,7 @@
             <h4><コメント一覧></h4>
             <% if @comments %>
               <% @comments.each do |comment| %>
-                <p>
-                  <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %></strong>
-                  <%= comment.comment %>
-                </p>
+                <%= render partial: "comment", locals: {comment:comment} %>
               <% end %>
             <% end %>
           </div>

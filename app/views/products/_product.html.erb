@@ -1,26 +1,28 @@
+<% unless product.project_path? %>
 <div class="col-md-3 col-sm-6 hero-feature">
   <div class="thumbnail">
-    <a href="<%= product.url %>">
-      <img src="<%= product.image_url %>" alt="">
-    </a>
-    <div class="caption">
-      <a href="/products/<%= product.id %>"><h3><%= truncate(product.title, :length => 40 ) %></h3></a>
-      <% if current_user %>
-        <div class="user-comment">
-          <div class="profile">
-            <img src="<%= current_user.icon_image %>" alt="sky-hi">
-            <div class="details">
-              <div class="nickname" style="overflow: initial;"><%= current_user.nickname %>
-              </div>
-              <div class="job" style="overflow: initial;">Rapper
+      <a href="<%= product.url %>">
+        <img src="<%= product.image_url %>" alt="">
+      </a>
+      <div class="caption">
+        <a href="/products/<%= product.id %>"><h3><%= truncate(product.title, :length => 40 ) %></h3></a>
+        <% if current_user %>
+          <div class="user-comment">
+            <div class="profile">
+              <img src="<%= current_user.icon_image %>" alt="ユーザー画像">
+              <div class="details">
+                <div class="nickname" style="overflow: initial;"><%= current_user.nickname %>
+                </div>
+                <div class="job" style="overflow: initial;">Rapper
+                </div>
               </div>
             </div>
+            <div class="comment" style="overflow: initial;">
+              電波少女きてるよね
+            </div>
           </div>
-          <div class="comment" style="overflow: initial;">
-            電波少女きてるよね
-          </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
   </div>
 </div>
+<% end %>

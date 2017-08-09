@@ -80,17 +80,29 @@
 
 
         <!-- Content Row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Latest Articles</h3>
-            </div>
-        </div>
+
         <!-- /.row -->
 
         <!-- Page Features -->
-        <div class="row text-center">
-          <% @articles.each do |product| %>
-            <%= render partial: "product", locals: {product:product} %>
-          <% end %>
-        </div>
+          <div class="row">
+            <div class="col-lg-12">
+                <h3>Latest Projects</h3>
+            </div>
+          </div>
+          <div class="row text-center">
+            <% @products.each do |product| %>
+                <%= render partial: "project", locals: {product:product} %>
+            <% end %>
+          </div>
+        
+          <div class="row">
+            <div class="col-lg-12">
+                <h3>Latest Articles</h3>
+            </div>
+          </div>
+          <div class="row text-center">
+            <% @articles.each do |product| %>
+              <%= render partial: "product", locals: {product:product} %>
+            <% end %>
+          </div>
 </div>
