@@ -59,32 +59,41 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">タイムライン</a>
-                    </li>
-                    <li>
-                        <a href="#menu-toggle" id="menu-toggle">ジャンルで検索</a>
-                    </li>
-                      <% if user_signed_in? %>
-                          <li>
-                            <a href="/users/<%= current_user.id %>"><%= current_user.nickname %></a>
-                            </li>
-                            <li>
-                            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                            </li>
-                          <li>
-                          <a class="post" href="/products/new">投稿する</a>
-                          </li>
-                      <% else %>
-                        <li>
-                          <%= link_to "ログイン", new_user_session_path, :class => 'post' %>
-                          </li>
-                          <li>
-                          <%= link_to "新規登録", new_user_registration_path, :class => 'post' %>
-                          </li>
-                      <% end %>
-                </ul>
+              <ul class="nav navbar-nav">
+                <li>
+                <% if current_page?(root_path) %>
+                  <dl class="searchbox">
+                    <%= search_form_for @q, url: root_path do |f| %>
+                      <dt><%= f.text_field :title_cont ,placeholder: '検索する' %></dt>
+                    <% end %>
+                  </dl>
+                <% end %>
+                </li>
+                <li>
+                  <a href="#">タイムライン</a>
+                </li>
+                <li>
+                  <a href="#menu-toggle" id="menu-toggle">ジャンルで検索</a>
+                </li>
+                <% if user_signed_in? %>
+                  <li>
+                    <a href="/users/<%= current_user.id %>"><%= current_user.nickname %></a>
+                  </li>
+                  <li>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                  </li>
+                  <li>
+                    <a class="post" href="/products/new">投稿する</a>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to "ログイン", new_user_session_path, :class => 'post' %>
+                  </li>
+                  <li>
+                    <%= link_to "新規登録", new_user_registration_path, :class => 'post' %>
+                  </li>
+                <% end %>
+              </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
