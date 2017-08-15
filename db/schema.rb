@@ -11,17 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170808100344) do
+ActiveRecord::Schema.define(version: 20170815053434) do
 
   create_table "comments", force: :cascade do |t|
     t.text    "comment",    limit: 65535
     t.integer "user_id",    limit: 4
     t.integer "product_id", limit: 4
-  end
-
-  create_table "picks", force: :cascade do |t|
-    t.text    "url",     limit: 65535
-    t.integer "user_id", limit: 4
   end
 
   create_table "products", force: :cascade do |t|
@@ -72,19 +67,21 @@ ActiveRecord::Schema.define(version: 20170808100344) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.integer  "sign_in_count",      limit: 4,   default: 0
+    t.string   "email",              limit: 255,   default: "", null: false
+    t.string   "encrypted_password", limit: 255,   default: "", null: false
+    t.integer  "sign_in_count",      limit: 4,     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip", limit: 255
     t.string   "last_sign_in_ip",    limit: 255
-    t.integer  "uid",                limit: 8
-    t.string   "name",               limit: 255
-    t.string   "provider",           limit: 255
-    t.string   "password",           limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "nickname",           limit: 255
+    t.text     "icon_image",         limit: 65535
+    t.text     "header",             limit: 65535
+    t.text     "job",                limit: 65535
   end
 
-  add_index "users", ["uid"], name: "index_users_on_uid", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
